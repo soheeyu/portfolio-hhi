@@ -1,0 +1,1041 @@
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body {
+      position: relative;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    /* 모바일 메뉴 */
+    button {
+      position:fixed;
+      right:10%;
+      top:50px;
+      font-size:32px;
+      border:0;
+      color:#fff;
+      background:transparent;
+      z-index:3;
+      display: none;
+	  }
+    .menu_mobile {
+      position:fixed;
+      right:-100%;
+      top:0;
+      width:60%;
+      height:100%;
+      background: #135BBC;
+      z-index:4;
+      padding:20px;
+    }
+    .menu_mobile>ul>li>a {  
+      display:block;
+      font-size:18px;
+      font-weight:bold;
+      color:#fff;
+      border-bottom:1px solid #ddd;
+      line-height:32px;
+    }
+    .menu_mobile ul ul {
+      display: none;
+    }
+    .close { display:block; text-align:right; }
+    
+
+    /* 메뉴 */
+    header {
+      width: 80%;
+      height: 50px;
+      margin: 0 auto;
+      position: absolute;
+      top: 1%;
+      left: 10%;
+      z-index: 2;
+    }
+
+    #logo {
+      float: left;
+    }
+
+    #logo a {
+      background: url("../image/hyundai_logo.png") no-repeat;
+      background-size: cover;
+      width: 174px;
+      height: 28px;
+      display: inline-block;
+      margin-top: 13px;
+    }
+
+    #menu {
+      width: 80%;
+      float: right;
+      display: block;
+    }
+
+    #menu>ul {
+      height: 100%;
+    }
+
+    #menu>ul>li {
+      width: 20%;
+      height: 100%;
+      float: left;
+      position: relative;
+    }
+
+    #menu>ul>li>a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 50px;
+      color: #fff;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    #menu>ul>li>a::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 5px;
+      background-color: #135BBC;
+      transition: 0.5s;
+      z-index: 2;
+    }
+
+    #menu>ul>li>a:hover::after {
+      width: 100%;
+    }
+
+    #menu>ul>ul {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
+
+    #menu ul ul {
+      display: none;
+    }
+
+    #menu ul ul::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50px;
+      width: 0;
+      height: 5px;
+      background-color: #135BBC;
+    }
+
+    #menu ul ul:hover::after {
+      width: 100%;
+    }
+
+    #menu ul ul li a {
+      display: block;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #000;
+      opacity: 0.3;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    #menu ul ul li a:hover {
+      opacity: 1;
+      background: #135BBC;
+    }
+
+    /* 메인 이미지 슬라이드 */
+    .swiper-container {
+      width: 100%;
+      height: 1100px;
+    }
+
+    .swiper-content {
+      color: #fff;
+      border-left: 1px solid #fff;
+      position: absolute;
+      top: 35%;
+      left: 10%;
+    }
+    .swiper-content-txt-1 {
+      width:40vw;
+    }
+    .swiper-slide h1 {
+      font-size: 2.5rem;
+      margin-left: 3rem;
+      opacity: 0;
+      transition: 3s;
+    }
+
+    .swiper-slide-active .swiper-content h1 {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+
+    .swiper-content h2 {
+      font-size: 1.5rem;
+      margin-left: 3rem;
+      margin-top: 6rem;
+      transition: 3s;
+      opacity: 0;
+    }
+
+    .swiper-slide-active .swiper-content h2 {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+
+    .swiper-content p {
+      font-size: 1.2rem;
+      margin-left: 3rem;
+      margin-top: 2rem;
+      transition: 3s;
+      opacity: 0;
+    }
+
+    .swiper-slide-active .swiper-content p {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+
+    #main .swiper-slide:nth-child(1) {
+      background: url("../image/main_bg_1.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #main .swiper-slide:nth-child(2) {
+      background: url("../image/main_bg_2.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #main .swiper-slide:nth-child(3) {
+      background: url("../image/main_bg_3.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    .controls {
+      font-size: 3em;
+      z-index: 1;
+      position: absolute;
+      left: 10%;
+      top: 20%;
+    }
+
+    .controls>div {
+      float: left;
+    }
+
+    #prev {
+      height: 73px;
+      width: 73px;
+      background: url("../image/btn_prev.png") no-repeat;
+      opacity: 0.4;
+    }
+
+    #prev:hover {
+      opacity: 1;
+    }
+
+    #next {
+      height: 73px;
+      width: 73px;
+      background: url("../image/btn_next.png") no-repeat;
+      margin-left: 10px;
+      opacity: 0.4;
+    }
+
+    #next:hover {
+      opacity: 1;
+    }
+
+    /* 프로젝트 반응형 swiper */
+    #project {
+      width: 65%;
+      height: 55rem;
+      margin: 0 auto;
+    }
+
+    #project h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      letter-spacing: -2px;
+      margin: 7rem 0 1rem 0;
+    }
+
+    #project p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin: 0 0 5rem 0;
+      color: #919191;
+    }
+
+    .project-txt h3 {
+      font-size: 1.5rem;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-top: 1rem;
+    }
+
+    .project-txt p {
+      font-size: 1.2rem;
+      text-align: left !important;
+      padding-top: 1rem;
+      color: #000 !important;
+
+    }
+
+    .swiper-container-2 {
+      width: 100%;
+      height: 35rem;
+      overflow: hidden;
+    }
+
+    .proj-img {
+      width: 100%;
+      height: 25rem;
+      overflow: hidden;
+    }
+
+    .swiper-container-2 figure {
+      background-size: cover;
+      width: 100%;
+      height: 25rem;
+      transition: all 0.5s;
+    }
+
+    .swiper-container-2 figure:hover {
+      transform: scale(1.1);
+    }
+
+    #proj-img-1 {
+      background: url("../image/proj_1.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #proj-img-2 {
+      background: url("../image/proj_2.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #proj-img-3 {
+      background: url("../image/proj_3.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #proj-img-4 {
+      background: url("../image/proj_4.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #proj-img-5 {
+      background: url("../image/proj_5.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #proj-img-6 {
+      background: url("../image/proj_6.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    /* 프로젝트 컨트롤러 버튼 */
+    .controls-2 {
+      position: absolute;
+      left: 50%;
+      margin-left: -45px;
+      padding-bottom: 5rem;
+    }
+
+    .controls-2>div {
+      float: left;
+    }
+
+    #prev-2 {
+      height: 39px;
+      width: 21px;
+      background: url("../image/project_btn_prev.png") no-repeat;
+      margin-right: 3rem;
+    }
+
+    #next-2 {
+      height: 39px;
+      width: 21px;
+      background: url("../image/project_btn_next.png") no-repeat;
+    }
+
+    /* 비지니스 section */
+    #business {
+      width: 100%;
+      height: 90rem;
+      background: url("../image/business_area_bg.jpg") no-repeat;
+      position: relative;
+    }
+
+    #business_bg {
+      width: 100%;
+      height: 90rem;
+      background: url("../image/business_area_bg2.png") no-repeat;
+      z-index: 2;
+    }
+
+    #business_bg>h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      letter-spacing: -2px;
+      padding-top: 15rem;
+      color: #fff
+    }
+
+    #business_bg>p {
+      font-size: 1.1rem;
+      text-align: center;
+      padding-top: 1.2rem;
+      color: #fff;
+    }
+
+    .cardbox {
+      position: absolute;
+      top: 28%;
+      left: 50%;
+      margin-left: -600px;
+      color: #fff;
+    }
+
+    .business_card1 {
+      background: url("../image/card1.jpg") no-repeat;
+      z-index: 3;
+      width: 400px;
+      height: 624px;
+      transform: translate(0, 50px);
+      float: left;
+    }
+
+    .business_card1:hover {
+      transition: transform 0.7s ease-out;
+      transform: translate(0px, 0px);
+    }
+
+    .business_card2 {
+      background: url("../image/card2.jpg") no-repeat;
+      z-index: 3;
+      width: 400px;
+      height: 624px;
+      float: left;
+    }
+
+    .business_card2:hover {
+      transition: transform 0.7s ease-out;
+      transform: translate(0px, 50px);
+    }
+
+    .business_card3 {
+      background: url("../image/card3.jpg") no-repeat;
+      z-index: 3;
+      width: 400px;
+      height: 624px;
+      transform: translate(0, 50px);
+      float: left;
+    }
+
+    .business_card3:hover {
+      transition: transform 0.7s ease-out;
+      transform: translate(0px, 0px);
+    }
+
+    .business_card_bk {
+      background-color: #000;
+      opacity: 0;
+      height: 100%;
+      transition: 0.5s;
+      z-index: 2;
+    }
+
+    .cardbox>div:hover .business_card_bk {
+      opacity: 0.6;
+    }
+
+    .cardbox>div:hover a {
+      transform: translateX(10px);
+    }
+
+    .business_card_txt {
+      margin: 2rem;
+      position: absolute;
+      top: 53%;
+      z-index: 3;
+    }
+
+    .cardbox h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .cardbox h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .cardbox p {
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+    }
+
+    .business_card_txt a {
+      background: url("../image/link_btn.png") no-repeat;
+      width: 48px;
+      height: 12px;
+      position: absolute;
+      right: 0%;
+      transition: 0.5s;
+    }
+
+    /* 블로그 기업 내용 슬라이드 색션 */
+    #blog {
+      width: 100%;
+      height: 55rem;
+      position: relative;
+    }
+
+    #blog h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      letter-spacing: -2px;
+      margin: 0 0 1rem 0;
+    }
+
+    #blog>p {
+      font-size: 1.1rem;
+      margin: 0 0 5rem 0;
+      color: #919191;
+      text-align: center;
+    }
+
+    .swiper-container-3 {
+      position: relative;
+    }
+
+    .swiper-container-3>div>div:hover h3 {
+      text-decoration: underline;
+    }
+
+    .swiper-container-3>div>div>h3 {
+      font-size: 1.7rem;
+      width: 80%;
+      font-weight: 500;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .swiper-container-3>div>div>p {
+      font-size: 1.1rem;
+      width: 80%;
+      color: #919191;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    .swiper-container-3>div>div>span {
+      font-size: 1rem;
+      color: #919191;
+      margin-left: 2rem;
+      float: left;
+    }
+
+    .swiper-container-3>div>div>a {
+      width: 47px;
+      height: 11px;
+      background: url("../image/link_btn_gy.png") no-repeat;
+      display: block;
+      float: left;
+      position: absolute;
+      right: 10%;
+      transition: 0.5s;
+    }
+
+    .swiper-container-3>div>div:hover a {
+      transform: translateX(13px);
+    }
+
+    .swiper-container-3 {
+      width: 65%;
+      height: 35rem;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .swiper-container-3>.swiper-wrapper>.swiper-slide {
+      background-color: #F4F4F4;
+    }
+
+    .swiper-container-3>.swiper-wrapper>.swiper-slide>div {
+      width: 85%;
+      height: 220px;
+      margin: 30px auto;
+      background-size: cover;
+    }
+
+
+    .blog-image1 {
+      background: url("../image/blog_image1.jpg") no-repeat;
+    }
+
+    .blog-image2 {
+      background: url("../image/blog_image2.jpg") no-repeat;
+    }
+
+    .blog-image3 {
+      background: url("../image/blog_image3.jpg") no-repeat;
+    }
+
+    .blog-image4 {
+      background: url("../image/blog_image4.jpg") no-repeat;
+    }
+
+    .blog-image5 {
+      background: url("../image/blog_image5.jpg") no-repeat;
+    }
+
+    .blog-image6 {
+      background: url("../image/blog_image6.jpg") no-repeat;
+    }
+
+    #prev-3 {
+      height: 39px;
+      width: 21px;
+      background: url("../image/project_btn_prev.png") no-repeat;
+      position: absolute;
+      top: 45%;
+      left: 10%;
+    }
+
+    #next-3 {
+      height: 39px;
+      width: 21px;
+      background: url("../image/project_btn_next.png") no-repeat;
+      position: absolute;
+      top: 45%;
+      right: 10%;
+    }
+
+    /* 링크 카드 section */
+    #link-card {
+      height: 500px;
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+
+    #link-card>div {
+      height: 500px;
+      width: 33.333%;
+      float: left;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #link-card>div>figure {
+      height: 500px;
+      width: 100%;
+      transition: 0.5s;
+      position: relative;
+    }
+
+    #link-card>div:hover figure {
+      transform: scale(1.1);
+    }
+
+    #recruit figure {
+      background: url("../image/link_img_1.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #hipro figure {
+      background: url("../image/link_img_2.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #education figure {
+      background: url("../image/link_img_3.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    #link-card-txt {
+      color: #fff;
+      position: absolute;
+      left: 10%;
+      top: 2%;
+    }
+
+    #link-card-txt h3 {
+      font-size: 1.1rem;
+      margin-top: 2rem;
+    }
+
+    #link-card-txt h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-top: 10rem;
+    }
+
+    #link-card-txt p {
+      width: 40%;
+      font-size: 1.1rem;
+      margin: 2rem 0 2rem 0;
+    }
+
+    #link-card-txt span {
+      background: url("../image/link_btn_long.png") no-repeat;
+      width: 193px;
+      height: 11px;
+      display: block;
+    }
+
+    #link-card-txt a {
+      color: #fff;
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* footer */
+    footer {
+      width: 80%;
+      position: relative;
+      left: 50%;
+      margin-left: -40%;
+    }
+
+    #foot-logo {
+      float: left;
+    }
+
+    #foot-logo a {
+      width: 160px;
+      height: 25px;
+      background: url("../image/hyundai_logo_color.png") no-repeat;
+      display: block;
+      margin-bottom: 3rem;
+      margin-top: 5rem;
+    }
+
+    footer>ul {
+      position: absolute;
+      right: 0;
+      font-size: 1rem;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      margin-top: 5rem;
+    }
+
+    footer>ul li {
+      float: left;
+      border-right: 2px solid #D9D9D9;
+    }
+
+    footer>ul li:nth-child(3) {
+      border: 0;
+    }
+
+    footer>ul li a {
+      color: #919191;
+      text-align: center;
+      margin-right: 2rem;
+      margin-left: 2rem;
+
+    }
+
+    footer hr {
+      width: 100%;
+      color: #D9D9D9;
+    }
+
+    footer p {
+      font-size: 1rem;
+      color: #919191;
+      margin-top: 3rem;
+      float: left;
+    }
+
+    .footer-btn-1 {
+      width: 180px;
+      height: 45px;
+      color: #919191;
+      background-color: #F4F4F4;
+      font-size: 1rem;
+      border: none;
+      float: left;
+      margin-top: 3rem;
+      position: absolute;
+      right: 20%;
+    }
+
+    .footer-btn-1:hover {
+      cursor: pointer;
+    }
+
+    .footer-btn-1 a {
+      color: #919191;
+      display: block;
+      margin-top: 9.5px;
+      margin-left: 15%;
+    }
+
+    .footer-btn-1:focus {
+      border: none;
+      outline: none;
+    }
+
+    #family-site {
+      margin-top: 3rem;
+      padding-bottom: 7rem;
+      position: absolute;
+      right: 0;
+      font-size: 1rem;
+      width: 15%;
+    }
+
+    #family-site h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    #family-site ul li {
+      display: none;
+      background-color: #F4F4F4;
+      padding: 0.5rem;
+    }
+
+    #family-site ul li:hover {
+      background-color: #C1C1C1;
+    }
+
+    #family-site ul li a {
+      color: #000;
+    }
+
+    .footer-btn-2 {
+      width: 19px;
+      height: 11px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-top: 0.5rem;
+    }
+    #scroll-top {
+      width:50px;
+      height:50px;
+      position:fixed;
+      right: 5%;
+      bottom: 5%;
+      background:url('../image/btn_top.png')no-repeat;
+      background-size: contain; z-index: 9;
+    }
+    .line-1 {
+      width:3px; height:90px;
+      background-color: #000;
+      position:absolute; left:49.7%;
+    }
+    .line-2 {
+      width:3px; height:90px;
+      background-color: #fff;
+      position:absolute; left:49.7%;
+      top:7%; z-index:9;
+    }
+    .line-3 {
+      width:3px; height:90px;
+      background-color: #000;
+      position:absolute; left:49.7%;
+      top:-15%;
+    }
+    /* 반응형 media query */
+    @media all and (max-width:1600px) {
+      html {
+        font-size: 15px;
+      }
+    }
+    @media all and (max-width:1200px) {
+      html {
+        font-size: 14px;
+      }
+      #menu { display: none; }
+      .menu_mobile_btn { display: block; }
+      .swiper-container { height:750px; }
+      .swiper-pagination { top:85%; }
+      .swiper-content-txt-1 { width:60vw; }
+      /* 사업 부분 카드 섹션*/
+      #business {
+        background: none;
+        width: 100%;
+      }
+      #business_bg {
+        background: none;
+        width: 100%;
+      }
+      #business_bg>h1 {
+        padding-top: 8rem;
+        color: black;
+      }
+      #business_bg>p {
+        color: black;
+      }
+      .cardbox { 
+        width: 100%; 
+        top: 20%;
+        left: 0;
+        margin-left: 0;
+      }
+      .business_card1 {
+        background: url("../image/card-1-2.jpg") no-repeat;
+        background-size: cover;
+        width: 100%; height: 420px;
+        transform: translate(0, 0);
+      }
+      .business_card2 {
+        background: url("../image/card-2-2.jpg") no-repeat;
+        background-size: cover;
+        width: 100%; height: 420px;
+        transform: translate(0, 0);
+      }
+      .business_card2:hover {
+        transition: none;
+        transform: translate(0px, 0px);
+      }
+      .business_card3 {
+        background: url("../image/card-3-2.jpg") no-repeat;
+        background-size: cover;
+        width: 100%; height: 420px;
+        transform: translate(0, 0);
+      }
+      .business_card_txt { top: 30%; left: 10%; }
+      .cardbox h2 { font-weight:600; }
+      .cardbox h3 { font-weight:600; }
+      .cardbox p { padding:5px 0;}
+
+      /* 블로그 기업 내용 슬라이드 섹션 */
+      #blog {
+        margin-top: 30rem;
+      }
+      .swiper-container-3>div>div>p {
+        display: none;
+      }
+      .swiper-container-3>div>div>span {
+        margin-top: 2.5rem;
+      }
+      .swiper-container-3>div>div>a {
+        margin-top: 2.5rem;
+      }
+
+      /* 푸터 */
+      #foot-logo { float: none;
+      }
+      footer>ul {
+        margin-top: 3rem;
+      }
+      footer p {
+        text-align: center;
+        float: none;
+        margin-top: 6.5rem;
+      }
+      .footer-btn-1 {
+        margin-top: 3.5rem;
+        float: none;
+        left: 0%;
+      }
+      #family-site {
+        width: 30%;
+      }
+	  }
+    @media all and (max-width:790px) {
+      html { font-size: 12px; }
+      .swiper-content-txt-1 { width:80vw; }
+      .swiper-container-2 { height:42rem; }
+      .proj-img { height: 33rem; }
+      .swiper-container-2 figure { height: 33rem; }
+      .business_card1 { height: 350px; }
+      .business_card2 { height: 350px; }
+      .business_card3 { height: 350px; }
+      #blog { margin-top: 25rem; }
+      #link-card { height: 1050px; }
+      #link-card>div {
+        width: 100%; height: 350px;
+        float: none; overflow: hidden;
+      }
+      #link-card-txt h1{ margin-top: 5rem; }
+      
+      footer>ul {
+        width:100%; height:90px;
+      }
+      footer>ul li { 
+        float:none; 
+        border-right:none; border-bottom:1px solid #D9D9D9;
+        width:100%; height:30px;
+      }
+      footer>ul li a { 
+        font-size:1.2rem; line-height: 30px;
+        margin:0;
+      }
+      footer p { font-size: 1.2rem;  margin-top: 15rem; text-align: left;}
+      .footer-btn-1 { float:none; }
+      .footer-btn-1 a { font-size:1.2rem; margin-left: 22%;}
+      #family-site {
+        width:80%; left:0; 
+        margin-top: 10rem;
+      }
+      #family-site ul li a { font-size:1.2rem ;}
+    }
+    /* 375px 아이폰X 기준 */
+    @media all and (max-width:380px){
+      html {  font-size: 10px; }
+      #logo a { width: 112px; height: 18px; }
+      .menu_mobile { width:100%; }
+      .swiper-container { height:600px; }
+      .swiper-content-txt-1 { width:90vw; }
+      #prev {
+        width: 53px; height: 53px;
+        background: url("../image/btn_prev_mobile.png") no-repeat;
+      }
+      #next {
+        width: 53px; height: 53px;
+        background: url("../image/btn_next_mobile.png") no-repeat;
+      }
+      .swiper-slide h1 { margin-right: 3rem; }
+      .swiper-content p { margin-right: 3rem; }
+      .swiper-pagination {  margin-right:-102px; } 
+      .swiper-pagination-bullet { width:6rem; }
+
+      #project { width:80%; }
+      #project p { font-size:1.2rem }
+      #prev-2,#next-2 { display:none; }
+
+      .business_card1 { height:300px; }
+      .business_card2 { height:300px; }
+      .business_card3 { height:300px; }
+      .cardbox h3 { letter-spacing:-1px; }
+
+      #blog { margin-top: 25rem; height:60rem; }
+      .swiper-container-3 {
+        height: 40rem;
+      }
+      .swiper-container-3 { width:80%; }
+      .swiper-container-3>.swiper-wrapper>.swiper-slide { width:100%; }
+      #prev-3,#next-3 { display:none; }
+     
+      #link-card-txt { top:10%; }
+
+    }
