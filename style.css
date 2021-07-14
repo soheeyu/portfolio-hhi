@@ -42,12 +42,22 @@
     }
     .menu_mobile>ul>li>a {  
       display:block;
-      font-size:18px;
+      font-size:1.3rem;
       font-weight:bold;
       color:#fff;
       border-bottom:1px solid #ddd;
       line-height:32px;
+      opacity: 0.5;
     }
+    .menu_mobile>ul>li>a:hover { opacity:1; }
+    .menu_mobile>ul>li>ul>li {
+      margin:10px 0;
+    }
+    .menu_mobile>ul>li>ul>li>a {
+      font-size:1.3rem;
+      color:#fff;
+    }
+    .menu_mobile>ul>li>ul>li>a:hover { font-weight:bold; text-decoration:underline; }
     .menu_mobile ul ul {
       display: none;
     }
@@ -215,7 +225,6 @@
       opacity: 1;
       transform: translateY(-10px);
     }
-
     #main .swiper-slide:nth-child(1) {
       background: url("../image/main_bg_1.jpg") no-repeat;
       background-size: cover;
@@ -878,6 +887,8 @@
       .swiper-container { height:750px; }
       .swiper-pagination { top:85%; }
       .swiper-content-txt-1 { width:60vw; }
+      /* line */
+      .line-1, .line-2, .line-3 { display:none; }
       /* 사업 부분 카드 섹션*/
       #business {
         background: none;
@@ -1016,8 +1027,7 @@
       }
       .swiper-slide h1 { margin-right: 3rem; }
       .swiper-content p { margin-right: 3rem; }
-      .swiper-pagination {  margin-right:-102px; } 
-      .swiper-pagination-bullet { width:6rem; }
+      .swiper-pagination {  display: none; } 
 
       #project { width:80%; }
       #project p { font-size:1.2rem }
